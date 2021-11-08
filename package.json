@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": " http-server-spa dist/ index.html 4200",
         "server": "npx http-server ./dist",
         "build": "ng build",
         "prod": "ng build --configuration production",
