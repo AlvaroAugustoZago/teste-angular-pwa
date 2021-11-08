@@ -1,5 +1,5 @@
 import { Joke } from './models/joke';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DataService } from './services/data.service';
 import { Observable } from 'rxjs';
 import { CatsPhoto } from './models/cats-photo';
