@@ -12,7 +12,7 @@ export class PromptComponent {
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: { mobileType: 'ios' | 'android', promptEvent?: any },
     private bottomSheetRef: MatBottomSheetRef<PromptComponent>
   ) {
-    console.log(data)
+    alert(data)
   }
 
   public installPwa(): void {
