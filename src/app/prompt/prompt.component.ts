@@ -16,6 +16,7 @@ export class PromptComponent {
   }
 
   public installPwa(): void {
+    console.log(this.data.promptEvent)
     this.data.promptEvent.prompt();
     this.close();
   }

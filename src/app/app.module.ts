@@ -7,12 +7,14 @@ import { environment } from 'src/environments/environment';
 import { PwaService } from './services/pwa.service';
 import { MatBottomSheetModule, MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PromptComponent } from './prompt/prompt.component';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PromptComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +29,11 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      //registrationStrategy: 'registerWhenStable:30000'
     })
+  ],
+  entryComponents: [
+    PromptComponent,
   ],
   providers: [
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true},
