@@ -1,3 +1,4 @@
+import { Platform } from '@angular/cdk/platform';
 import {Injectable} from '@angular/core';
 
 @Injectable()
@@ -5,8 +6,8 @@ export class ApplicationStateService {
 
   private isMobileResolution: boolean;
 
-  constructor() {
-    if (window.innerWidth < 768) {
+  constructor(platform: Platform) {
+    if (platform.ANDROID || platform.IOS) {
       this.isMobileResolution = true;
     } else {
       this.isMobileResolution = false;
