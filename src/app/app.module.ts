@@ -8,13 +8,20 @@ import { PwaService } from './services/pwa.service';
 import { MatBottomSheetModule, MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PromptComponent } from './prompt/prompt.component';
+import { UserProfileComponent } from './cadastro/veiculos/container/user-profile.component';
+import { UserProfileComponentMobile } from './cadastro/veiculos/container/mobile/user-profile.component.mobile';
+import { UserProfileComponentDesktop } from './cadastro/veiculos/container/web/user-profile.component.desktop';
+import { ApplicationStateService } from './application-state.service';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
 @NgModule({
   declarations: [
     AppComponent,
-    PromptComponent
+    PromptComponent,
+    UserProfileComponent,
+    UserProfileComponentDesktop,
+    UserProfileComponentMobile,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
   ],
   providers: [
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true},
+    ApplicationStateService
   ],
   bootstrap: [AppComponent]
 })
