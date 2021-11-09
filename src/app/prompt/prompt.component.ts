@@ -12,7 +12,6 @@ export class PromptComponent {
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: { mobileType: 'ios' | 'android', promptEvent?: any },
     private bottomSheetRef: MatBottomSheetRef<PromptComponent>
   ) {
-    alert(JSON.stringify(data))
   }
 
   public installPwa(): void {
