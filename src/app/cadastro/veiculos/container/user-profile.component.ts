@@ -14,7 +14,6 @@ export class UserProfileComponent {
 
   constructor(private applicationStateService: ApplicationStateService) {
     this.isMobileResolution = this.applicationStateService.getIsMobileResolution();
-    alert("isMobileResolution:"+ this.isMobileResolution)
   }
 
   public close(): void {

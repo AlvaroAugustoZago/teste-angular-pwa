@@ -15,7 +15,6 @@ export class ApplicationStateService {
   }
 
   public getIsMobileResolution(): boolean {
-    console.log(window.innerWidth)
     return this.isMobileResolution;
   }
 }
