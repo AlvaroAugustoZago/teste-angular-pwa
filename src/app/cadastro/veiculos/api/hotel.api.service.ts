@@ -11,7 +11,7 @@ const headers = new HttpHeaders().set('Accept', 'application/json');
 })
 export class HotelService {
   hotelList: Hotel[] = [];
-  api = 'http://www.angular.at/api/hotel';
+  api = 'https://www.angular.at/api/hotel';
 
   constructor(private http: HttpClient) {
   }
