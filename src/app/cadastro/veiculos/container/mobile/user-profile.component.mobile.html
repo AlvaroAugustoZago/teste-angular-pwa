@@ -1,23 +1,11 @@
-<main class="main-user-profile-content">
-    <section class="account-info">
-        <h2>
-            <img src="../../../../../assets/icons/Veículos.svg" alt="carro" style="fill: #00c255;height: 32px;"> Dados do Veículo
-        </h2>
-
-        <!-- <form class="user-profile-form" novalidate>
-            <div class="form-group">
-                <label for="profile-form-email">
-          Email
-        </label>
-                <input type="email" id="profile-form-email" readonly placeholder="user@example.com">
-            </div>
-
-            <div class="form-group">
-                <label for="profile-form-password">
-          Password
-        </label>
-                <input type="password" id="profile-form-password" readonly placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
-            </div>
-        </form> -->
-    </section>
-</main>
+<!-- <div class="d-flex justify-content-center"> -->
+<div class="card" *ngFor="let hotel of hotelList">
+    <div class="card-body">
+        <h5 class="card-title">{{hotel.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a> -->
+    </div>
+</div>
+<!-- </div> -->

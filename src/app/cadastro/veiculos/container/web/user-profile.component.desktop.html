@@ -1,15 +1,47 @@
-<div class="d-flex justify-content-center">
-    <div class="p-2 bd-highlight flex-grow-1">
-        <div class="card rounded shadow-sm">
-            <div class="card-body">
-                <div class="d-flex flex-row bd-highlight mb-3">
-                    <div class="p-2 bd-highlight"><img src="../../../../../assets/icons/Veículos.svg" alt="carro" style="fill: #00c255;height: 32px;"></div>
-                    <div class="p-2 bd-highlight">
-                        <h1 class="display-3" style="font-size:36px">Dados do Veículo</h1>
-                    </div>
-                    <div class="p-2 bd-highlight"><img src="../../../../../assets/icons/Lápis.svg" alt="lapis" style="fill: #00c255; height: 32px;"></div>
-                </div>
+<app-hotel-edit></app-hotel-edit>
+
+<div class="card">
+    <div class="header">
+        <h2 class="title">Hotel List</h2>
+    </div>
+    <div class="content">
+        <form #f="ngForm">
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input [(ngModel)]="filter.city" id="city" name="city" class="form-control">
             </div>
-        </div>
+
+            <button (click)="search()" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+<div class="card" *ngIf="hotelList.length > 0">
+    <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+    <div class="table-responsive">
+        <table class="table table-centered table-hover mb-0" id="datatable">
+            <thead>
+                <tr>
+                    <th class="border-top-0" scope="col">Id</th>
+                    <th class="border-top-0" scope="col">Name</th>
+                    <th class="border-top-0" scope="col">City</th>
+                    <th class="border-top-0" scope="col">Stars</th>
+                    <th class="border-top-0" scope="col" style="width:120px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of hotelList" [class.active]="item === selectedHotel">
+
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.city}}</td>
+                    <td>{{item.stars}}</td>
+                    <td style="white-space: nowrap">
+                        <a [routerLink]="['../hotels', item.id ]" class="btn btn-secondary">Edit</a>&nbsp;
+                        <button (click)="delete(item)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

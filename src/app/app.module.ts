@@ -12,6 +12,9 @@ import { UserProfileComponent } from './cadastro/veiculos/container/user-profile
 import { UserProfileComponentMobile } from './cadastro/veiculos/container/mobile/user-profile.component.mobile';
 import { UserProfileComponentDesktop } from './cadastro/veiculos/container/web/user-profile.component.desktop';
 import { ApplicationStateService } from './application-state.service';
+import { FormsModule } from '@angular/forms';
+import { HotelEditComponent } from './cadastro/veiculos/component/web/hotel-edit.component';
+import { HotelService } from './cadastro/veiculos/api/hotel.api.service';
 
 const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt();
 
@@ -22,6 +25,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     UserProfileComponent,
     UserProfileComponentDesktop,
     UserProfileComponentMobile,
+    HotelEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,10 +36,9 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
@@ -44,7 +47,8 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
   ],
   providers: [
     {provide: APP_INITIALIZER, useFactory: initializer, deps: [PwaService], multi: true},
-    ApplicationStateService
+    ApplicationStateService,
+    HotelService
   ],
   bootstrap: [AppComponent]
 })
