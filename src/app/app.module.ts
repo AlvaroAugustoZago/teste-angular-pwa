@@ -12,7 +12,7 @@ import { UserProfileComponent } from './cadastro/veiculos/container/user-profile
 import { UserProfileComponentMobile } from './cadastro/veiculos/container/mobile/user-profile.component.mobile';
 import { UserProfileComponentDesktop } from './cadastro/veiculos/container/web/user-profile.component.desktop';
 import { ApplicationStateService } from './application-state.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelEditComponent } from './cadastro/veiculos/component/web/hotel-edit.component';
 import { HotelService } from './cadastro/veiculos/api/hotel.api.service';
 
@@ -37,6 +37,7 @@ const initializer = (pwaService: PwaService) => () => pwaService.initPwaPrompt()
     MatButtonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
