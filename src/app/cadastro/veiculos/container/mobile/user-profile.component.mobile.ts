@@ -51,6 +51,7 @@ export class UserProfileComponentMobile extends UserProfileComponent {
       this.filePath = reader.result as string;
     }
     reader.readAsDataURL(file)
+    alert(this.filePath)
   }
 
   submit() {
