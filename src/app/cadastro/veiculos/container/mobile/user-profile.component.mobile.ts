@@ -39,7 +39,7 @@ export class UserProfileComponentMobile extends UserProfileComponent {
 
   imagePreview(e) {
     const file = (e.target as HTMLInputElement).files[0];
-
+    alert(file)
     this.myForm.patchValue({
       img: file
     });

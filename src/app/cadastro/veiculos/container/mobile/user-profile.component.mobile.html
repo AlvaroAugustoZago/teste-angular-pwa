@@ -18,7 +18,7 @@
     </div> -->
 <!-- </div> -->
 
-<!-- <form [formGroup]="myForm" (ngSubmit)="submit()">
+<form [formGroup]="myForm" (ngSubmit)="submit()">
 
     <div *ngIf="filePath && filePath !== ''">
         <img [src]="filePath" [alt]="myForm.value.name">
@@ -29,10 +29,4 @@
     <input formControlName="filename" placeholder="File name">
 
     <button type="submit">Upload</button>
-</form> -->
-
-<h2 id="value">Toggle Switch is off</h2>
-<label class="switch">
-    <input type="checkbox" name="myCheckbox" (change)="somethingChanged($event)">
-    <span class="slider round"></span>
-</label>
+</form>
