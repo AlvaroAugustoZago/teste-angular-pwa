@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApplicationStateService } from 'src/app/application-state.service';
 import { HotelService } from '../../api/hotel.api.service';
@@ -56,6 +56,14 @@ export class UserProfileComponentMobile extends UserProfileComponent {
 
   submit() {
     console.log(this.myForm.value)
+  }
+
+  somethingChanged($event) {
+    var message = "AAAA"//(_selector.checked) ? "Toggle Switch is on" : "Toggle Switch is off";
+    ['ScrollCallback'].postMessage('END OF PAGE!!!');
+    // if (messageHandler) {
+    //   Print.postMessage(message);
+    // }
   }
 
 }
